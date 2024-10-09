@@ -688,19 +688,22 @@ form {
 }
 
 .submit-button {
-    width: 100%;
-    padding: 10px;
-    border: 2px solid #fff;
-    background: transparent;
+    padding: 15px 20px;
+    font-size: 1em;
     color: #fff;
+    background-color: #c59542; /* Gold-like color */
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    transition: all 0.3s;
+    align-self: flex-start;
+    transition: background-color 0.3s;
 }
 
 .submit-button:hover {
-    background: #fff;
-    color: #000;
+    background-color: #a47630; /* Darker gold shade on hover */
 }
+
+
 
 .footer-bottom {
     text-align: center;
