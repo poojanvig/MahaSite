@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Navbar Example</title>
+    <style>
+        :root {
+            --brown-color: #705e39;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: sticky;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar.shrink {
+            padding: 5px 10px; /* Shrink the navbar more by reducing padding */
+        }
+
+        .menu-icon {
+            display: flex;
+            align-items: center;
+            font-size: 2em;
+            color: var(--brown-color);
+            cursor: pointer;
+            margin-left: 70px;
+        }
+
+        .menu-text {
+            margin-left: 5px;
+            font-size: 0.8em;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 30px; /* Adjust this to move the logo to the right */
+        }
+
+        .logo-text {
+            font-size: 1.2em;
+            color: var(--brown-color);
+            text-align: center;
+            margin-top: 5px;
+            transition: opacity 0.3s ease;
+        }
+
+        .logo-text.hidden {
+            opacity: 0;
+        }
+
+        .logo img {
+            height: 80px; /* Default size */
+            max-width: 100%; /* Make sure it doesn't overflow its container */
+            transition: height 0.3s ease;
+        }
+
+        .navbar.shrink .logo img {
+            height: 50px; /* Reduce logo size more when shrinking */
+        }
+
+        @media (max-width: 600px) {
+            .menu-text {
+                font-size: 0.6em; /* Reduce menu text size instead of hiding */
+            }
+            .navbar {
+                padding: 10px;
+            }
+            .menu-icon {
+                margin-left: 10px;
+                font-size: 1.5em;
+            }
+            .logo {
+                margin-left: 0;
+            }
+            .logo img {
+                height: 50px;
+            }
+            .book-visit {
+                display: none; /* Hide the book a site visit button on smaller screens */
+            }
+            .side-menu {
+                width: 200px; /* Reduce side menu width on smaller screens */
+                padding: 10px;
+            }
+            .side-menu ul li {
+                margin: 15px 0;
+            }
+        }
+        
+
+        .book-visit button {
+            padding: 10px 20px;
+            border: 2px solid var(--brown-color);
+            background-color: transparent;
+            color: var(--brown-color);
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .book-visit button:hover {
+            background-color: var(--brown-color);
+            color: white;
+        }
+
+        .side-menu {
+            position: fixed;
+            left: -250px;
+            top: 0;
+            width: 250px;
+            height: 100%;
+            background-color: var(--brown-color);
+            color: white;
+            padding: 20px;
+            transition: left 0.3s;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            z-index: 1001; /* Ensure side menu is above the navbar */
+        }
+
+        .side-menu.active {
+            left: 0;
+        }
+
+        .side-menu ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .side-menu ul li {
+            margin: 20px 0;
+        }
+
+        .side-menu ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        .close-menu {
+            cursor: pointer;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="menu-icon" onclick="toggleMenu()" aria-label="Toggle navigation menu">
+            <span class="menu-text">☰ MENU</span>
+        </div>
+        <div class="logo">
+            <img src="images/logo_noName.png" alt="Shree Mahalakshmi Constructions Logo">
+            <div class="logo-text" id="logoText">Shree Mahalakshmi Constructions</div>
+        </div>
+        <div class="book-visit">
+            <button>BOOK A SITE VISIT</button>
+        </div>
+    </nav>
+
+    <div class="side-menu" id="sideMenu">
+        <span class="close-menu" onclick="toggleMenu()" aria-label="Close navigation menu">&times; CLOSE</span>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Mauris consequat lacus quis arcu faucibus, a tempus lorem commodo. Sed euismod libero id lectus posuere, ac convallis erat varius. Fusce dictum elit id nulla facilisis, vel placerat metus accumsan. Curabitur convallis lorem sed lorem egestas, eget consequat eros vestibulum. Nam nec nunc vel quam tempor sodales. Pellentesque id varius erat, vel facilisis ligula. Morbi porta purus ut ligula luctus, et vulputate justo finibus. Proin vel orci sed lorem egestas tincidunt eget a arcu. Duis sit amet risus libero.</p>
+        <p>Donec congue eget nisl at sodales. Praesent eu velit vel nulla vehicula fermentum. Sed cursus eget ipsum vel ornare. Integer laoreet mi sed tincidunt lacinia. Nulla facilisi. Suspendisse potenti. Phasellus venenatis turpis ac odio tempor, ac malesuada turpis tincidunt. Proin posuere enim vel odio tincidunt, id eleifend purus interdum.</p>
+        <p>Morbi ac massa id ipsum tristique suscipit nec non quam. Aenean vel orci non purus iaculis dictum non a purus. In hac habitasse platea dictumst. Aliquam tincidunt, augue nec eleifend accumsan, lectus felis fringilla urna, in volutpat lacus elit at nulla. Etiam laoreet quam vel augue egestas, ut congue quam varius. Aliquam erat volutpat. Phasellus in malesuada sem, eget ullamcorper arcu. Donec a sapien vitae libero consequat lacinia a non nisl. Integer facilisis purus in libero cursus, in condimentum lorem eleifend. Nulla facilisi.</p>
+    </div>
+    
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('sideMenu').classList.toggle('active');
+        }
+
+        document.addEventListener('click', (event) => {
+            const sideMenu = document.getElementById('sideMenu');
+            if (sideMenu.classList.contains('active') && !sideMenu.contains(event.target) && !event.target.closest('.menu-icon')) {
+                sideMenu.classList.remove('active');
+            }
+        });
+
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            const logoText = document.getElementById('logoText');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shrink');
+                logoText.classList.add('hidden');
+            } else {
+                navbar.classList.remove('shrink');
+                logoText.classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
