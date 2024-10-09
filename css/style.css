@@ -303,7 +303,6 @@ body {
     margin-left: auto; /* Center align the line */
     margin-right: auto; /* Center align the line */
 }
-
 .locate-us {
     text-align: center;
     padding: 50px;
@@ -334,12 +333,12 @@ body {
 .locate-us-subtitle {
     font-size: 1.2em;
     color: #333;
-    /* margin-bottom: 30px; */
+    margin-bottom: 30px;
 }
 
 .locate-us-image {
     margin: 0 auto;
-    max-width: 1000px; /* Adjust width to fit the image properly */
+    max-width: 100%;
     padding: 20px 0;
 }
 
@@ -347,6 +346,7 @@ body {
     width: 100%;
     height: auto;
     object-fit: cover; /* Ensure the image covers the entire area */
+    border-radius: 10px;
 }
 
 .know-more-button-container {
@@ -367,6 +367,81 @@ body {
 .know-more-button:hover {
     background-color: #a47630;
 }
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .locate-us-title {
+        font-size: 1.8em; /* Reduce font size */
+        gap: 15px;
+    }
+
+    .locate-us-title::before,
+    .locate-us-title::after {
+        width: 300px; /* Reduce line length for medium screens */
+    }
+
+    .map-image {
+        border-radius: 5px; /* Slightly reduce border-radius for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .locate-us {
+        padding: 30px; /* Reduce padding for smaller screens */
+    }
+
+    .locate-us-title {
+        font-size: 1.6em; /* Further reduce font size */
+        gap: 10px;
+    }
+
+    .locate-us-title::before,
+    .locate-us-title::after {
+        width: 200px; /* Reduce line length further for smaller screens */
+    }
+
+    .locate-us-subtitle {
+        font-size: 1.1em; /* Reduce subtitle font size */
+    }
+
+    .map-image {
+        max-width: 90%; /* Ensure the image does not take up too much space on smaller screens */
+    }
+
+    .know-more-button {
+        padding: 12px 25px; /* Adjust button padding for smaller screens */
+        font-size: 0.9em; /* Reduce font size of the button text */
+    }
+}
+
+@media (max-width: 480px) {
+    .locate-us {
+        padding: 20px; /* Further reduce padding for very small screens */
+    }
+
+    .locate-us-title {
+        font-size: 1.4em; /* Reduce title font size */
+    }
+
+    .locate-us-title::before,
+    .locate-us-title::after {
+        width: 100px; /* Reduce line length to fit smaller screens */
+    }
+
+    .locate-us-subtitle {
+        font-size: 1em; /* Further reduce subtitle font size */
+    }
+
+    .map-image {
+        max-width: 100%; /* Ensure it fills the available width on very small screens */
+    }
+
+    .know-more-button {
+        padding: 10px 20px; /* Further reduce button padding */
+        font-size: 0.8em; /* Reduce button font size */
+    }
+}
+
 .featured-projects {
     text-align: center;
     padding: 50px;
