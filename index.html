@@ -172,22 +172,34 @@
     <div class="contact-form">
         <form name="contact" method="POST" data-netlify="true">
             <input type="hidden" name="form-name" value="contact">
+            
             <div class="form-group">
-                <input type="text" name="name" placeholder="Name" required>
-                <input type="email" name="email" placeholder="Email" required>
+                <input type="text" name="name" placeholder="Your Name" required>
             </div>
+            
             <div class="form-group">
-                <input type="tel" name="phone" placeholder="Phone" required>
+                <input type="email" name="email" placeholder="Your Email" required>
             </div>
+            
             <div class="form-group">
-                <textarea name="message" placeholder="Message" rows="6"></textarea>
+                <input type="tel" name="phone" placeholder="Phone Number" required>
             </div>
+            
+            <div class="form-group">
+                <textarea name="message" placeholder="Your Message" rows="6"></textarea>
+            </div>
+            
             <div class="form-group-checkbox">
-                <input type="checkbox" name="authorization" id="authorization">
-                <label for="authorization">I authorize Shree Mahalakshmi Constructions and its representative to contact me with updates and notifications via Email, SMS, WhatsApp, and Call. This will override the registry on DND/NDNC.</label>
+                <input type="checkbox" name="authorization" id="authorization" required>
+                <label for="authorization">
+                    I authorize Shree Mahalakshmi Constructions and its representative to contact me with updates and notifications via Email, SMS, WhatsApp, and Call. This will override the registry on DND/NDNC.
+                </label>
             </div>
+            
             <button type="submit" class="submit-button">SUBMIT</button>
         </form>
+        
+        
     </div>
 </section>
 
