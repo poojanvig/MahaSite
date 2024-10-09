@@ -82,15 +82,14 @@
     <h2 class="stay-updated-title">STAY UPDATED</h2>
     <p>Keep up with the latest in real estate in Mumbai and developments at Shree Mahalakshmi Constructions</p>
     <form name="stay-updated" method="POST" data-netlify="true">
-        <p>
-          <label>Email Address: <input type="email" name="email" required /></label>
-        </p>
-        <p>
-          <button type="submit">Submit</button>
-        </p>
-      </form>
-      
+        <input type="hidden" name="form-name" value="stay-updated">
+        <div class="subscription-form">
+            <input type="email" name="email" placeholder="EMAIL ADDRESS" class="email-input" required>
+            <button type="submit" class="submit-button">SUBMIT</button>
+        </div>
+    </form>
 </section>
+
 
 
 <hr class="line-breaker">
