@@ -1,0 +1,74 @@
+/* botpress-custom.css */
+
+/* Set the font family to match your website */
+:root {
+    --bpw-font-family: 'Arial, sans-serif';
+  }
+  
+  /* Header styles */
+  .bpw-header {
+    background-color: #705e39; /* Brown color */
+    color: #ffffff; /* White text */
+  }
+  
+  /* Bot messages */
+  .bpw-message.bpw-from-bot .bpw-content {
+    background-color: #f9f9f9; /* Light background */
+    color: #002b49; /* Dark blue text */
+  }
+  
+  /* User messages */
+  .bpw-message.bpw-from-user .bpw-content {
+    background-color: #c59542; /* Gold-like color */
+    color: #ffffff; /* White text */
+  }
+  
+  /* Chat background */
+  .bpw-chat {
+    background-color: #ffffff; /* White background */
+  }
+  
+  /* Input field */
+  .bpw-input-container {
+    background-color: #f0f0f0;
+  }
+  
+  .bpw-input-container input {
+    background-color: #ffffff;
+    color: #333333;
+  }
+  
+  /* Buttons */
+  .bpw-chat .bpw-widget-button {
+    background-color: #c59542; /* Gold-like color */
+    color: #ffffff;
+    border: none;
+  }
+  
+  .bpw-chat .bpw-widget-button:hover {
+    background-color: #a47630; /* Darker gold on hover */
+  }
+  
+  /* Links */
+  .bpw-chat a {
+    color: #c59542; /* Gold-like color */
+  }
+  
+  /* Scrollbar styling */
+  .bpw-chat ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .bpw-chat ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  .bpw-chat ::-webkit-scrollbar-thumb {
+    background: #c59542; /* Gold-like color */
+    border-radius: 4px;
+  }
+  
+  .bpw-chat ::-webkit-scrollbar-thumb:hover {
+    background: #a47630; /* Darker gold on hover */
+  }
+  

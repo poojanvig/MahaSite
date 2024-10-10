@@ -326,7 +326,7 @@ body {
 .locate-us-title::before, 
 .locate-us-title::after {
     content: "";
-    width: 525px; /* Adjust this value to decrease or increase line length */
+    width: 505px; 
     height: 1px;
     background: #000;
 }
